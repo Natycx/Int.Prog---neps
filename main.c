@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int desafio1(){
     int p, r;
@@ -141,8 +142,81 @@ int desafio7(){
     return 0;
 }
 
+int decrescente(const void *a, const void *b){
+    int x = *((const int *)a), y = *((const int  *)b);
+    if(x > y){
+        return -1;
+    }
+    if(x < y){
+        return 1;
+    }
+    return 0;
+}
+int crescente(const void *a, const void *b){
+    int x = *((const int *)a), y = *((const int  *)b);
+    if(x < y){
+        return -1;
+    }
+    if(x > y){
+        return 1;
+    }
+    return 0;
+}
+
+int desafio8(){
+    int vet[10];
+
+    for (int i = 0; i < 10; ++i) {
+        scanf("%d", &vet[i]);
+    }
+
+    qsort(vet,10,sizeof(vet[0]),crescente);
+
+    for (int i = 0; i < 10; ++i) {
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+
+    qsort(vet,10,sizeof(vet[0]),decrescente);
+
+    for (int i = 0; i < 10; ++i) {
+        printf("%d ", vet[i]);
+    }
+
+
+    return 0;
+}
+
+int desafio9(){
+    int n;
+
+    scanf("%d", &n);
+
+    int vet[n];
+
+    for (int i = 0; i < n; ++i) {
+        scanf("%d", &vet[i]);
+    }
+
+    qsort(vet,n,sizeof(vet[0]),crescente);
+
+    for (int i = 0; i < n; ++i) {
+        printf("%d \n", vet[i]);
+    }
+    return 0;
+}
+
+int desafio10(){
+
+
+
+
+    return 0;
+}
+
+
 int main() {
-    desafio6();
+    desafio9();
 
     return 0;
 }
